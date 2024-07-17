@@ -45,7 +45,7 @@ return (
   Container:{
     flex:1,
     backgroundColor:'#f5f5f5',
-  
+    
   }
  })
 

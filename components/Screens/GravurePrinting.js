@@ -1,20 +1,20 @@
-import * as React from 'react'
+import * as React from 'react';
 import { View, Text, SafeAreaView,ScrollView, StyleSheet } from "react-native";
-import {LeatherScreenContent} from '../utils/ServiceScreensContent'
+import {GravurelScreenontent} from '../utils/ServiceScreensContent'
 import Footer from '../utils/Footer';
 
-export default function LeatherScreen() {
+export default function GravureScreen() {
    return (
       <SafeAreaView>
       <ScrollView>
       <View style={styles.container}>
-                <Text style={styles.heading}>{LeatherScreenContent.heading}</Text>
+                <Text style={styles.heading}>{GravurelScreenontent.heading}</Text>
                 <View style={styles.imgContainer} >
-                    {LeatherScreenContent.img}
+                    {GravurelScreenontent.img}
                 </View>
                 <View >
                     <Text style={styles.decs} >
-                        {LeatherScreenContent.decs}
+                        {GravurelScreenontent.decs}
                     </Text>
                 </View>
                 <Footer />
