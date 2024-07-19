@@ -1,55 +1,15 @@
 import React from 'react'
-import { View, Text, StyleSheet, SafeAreaView, ScrollView } from 'react-native'
+import { StyleSheet, SafeAreaView, ScrollView } from 'react-native'
 import { FlexoScreenontent } from '../utils/ServiceScreensContent'
-import Footer from '../utils/Footer'
+import ServicesLayout from '../utils/ServicesLayout'
 
 export default function FlexoScreen() {
     return (
 
         <SafeAreaView >
             <ScrollView>
-                <View style={styles.container}>
-                <Text style={styles.heading}>{FlexoScreenontent.heading}</Text>
-                <View style={styles.imgContainer} >
-                    {FlexoScreenontent.img}
-                </View>
-                <View >
-                    <Text style={styles.decs} >
-                        {FlexoScreenontent.decs}
-                    </Text>
-                </View>
-                <Footer />
-                </View>
+               <ServicesLayout ScreenContent={FlexoScreenontent} />
             </ScrollView>
         </SafeAreaView>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-    },
-    heading: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        marginTop: 15,
-    },
-    imgContainer: {
-        width: 390,
-        height: 238,
-        alignItems: 'center',
-        borderWidth: 3,
-        borderRadius: 3,
-        marginTop: 15,
-        borderColor: 'darkblue'
-    },
-    decs: {
-        alignSelf: 'center',
-        marginTop: 10,
-        marginLeft: 10,
-        marginRight: 10,
-        fontSize: 15,
-        marginBottom: 32
-    }
-})

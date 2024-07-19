@@ -32,10 +32,11 @@ export default function NavigationBar() {
        screenOptions={{
          tabBarInactiveTintColor: "black",
          tabBarLabelStyle: { fontSize: 12,height:15, width:100},
-         tabBarStyle: { backgroundColor: 'white', borderBottomWidth:3, borderBottomColor:"white",borderColor:'pink'   },
+         tabBarStyle: { backgroundColor: 'white', borderBottomWidth:3, borderBottomColor:"white" },
          tabBarItemStyle:{marginTop:5},
          tabBarAndroidRipple:true,
          swipeEnabled:false,
+         animationEnabled:false
        }}
        tabBar={(props)=> <CusTomTab {...props}  />}
 >
@@ -47,6 +48,7 @@ export default function NavigationBar() {
            name={drawer.name}
 
            options={{
+            animationEnabled:false,
             tabBarShowIcon:true,
             tabBarContentContainerStyle:{borderTopColor:"white"},
             tabBarIconStyle:{position:"right"},

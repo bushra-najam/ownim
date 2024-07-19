@@ -7,7 +7,7 @@ export default function AboutScreen() {
       <SafeAreaView>
          <ScrollView>
             <View style={styles.container}>
-            <ImageBackground source={require('../../assets/image.png')} style={styles.bcgImg}resizeMode='cover' >
+            <ImageBackground source={require('../../assets/background.png')} style={styles.bcgImg}resizeMode='cover' >
          <View style={styles.header}>
          <Text style={styles.headerText1}>INITIAL BRIEF</Text>
          <Text style={styles.headerText2}>ABOUT OUR COMPANY</Text>
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
    },
    headerText2:{
       fontWeight:'bold',
-      color:'hotpink',
+      color:'#e91e63',
       fontSize:25
    },
    heading: {
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
       marginLeft:3
    },
    aboutTxt:{
-      fontSize: 12,
+      fontSize: 13,
       alignSelf:'flex-start',
       marginLeft:8,
       marginRight:15,
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
       marginTop:5
    },
    text: {
-      fontSize: 12,
+      fontSize: 13,
       alignSelf:'center',
       alignItems:'center',
       marginLeft:50,
@@ -116,8 +116,6 @@ const styles = StyleSheet.create({
    },
    bcgImg:{
        alignSelf:'flex-start',
-       backgroundColor:'linen',
-       color:'linen'
    },
    line:{  borderBottomColor: 'darkblue',
       borderBottomWidth: StyleSheet.hairlineWidth,}

@@ -10,7 +10,7 @@ const ActionBarImage = () => {
          require('../../assets/logo.png')}
         style={{
           width: 100,
-          height: 20,
+          height: 29,
           marginLeft: 300,
           marginTop:10,
         }}

@@ -8,7 +8,7 @@ export default function App() {
 <SafeAreaView style={styles.container}>
 <MenuProvider style={{marginBottom:-20, height:0}} key={'menu'}>
 <StatusBar backgroundColor={"black"} barStyle={'light-content'}/>
-<View style={{backgroundColor:'white', height:40,marginBottom:-18}}>
+<View style={{backgroundColor:'white', height:40,marginBottom:-16}}>
 <ActionBarImage/>
 </View>
 <NavigationBar/>
@@ -21,6 +21,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: 'white',
   },
 });
