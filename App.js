@@ -1,6 +1,6 @@
 import { StyleSheet,StatusBar, SafeAreaView,View } from 'react-native';
-import NavigationBar  from './components/DrawerNavigation/NavigationBar';
-import ActionBarImage from './components/DrawerNavigation/ActionBarImage';
+import NavigationBar  from './components/Navigation/NavigationBar';
+import ActionBarImage from './components/Navigation/ActionBarImage';
 import { MenuProvider } from 'react-native-popup-menu';
 import React from 'react';
 export default function App() {
@@ -13,7 +13,6 @@ export default function App() {
 </View>
 <NavigationBar/>
 </MenuProvider>
-
 </SafeAreaView>
   );
 }

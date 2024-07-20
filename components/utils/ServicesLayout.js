@@ -6,8 +6,8 @@ import Footer from './Footer'
 export default function ServicesLayout({ScreenContent}) {
     return (
             <View style={styles.container}>
-                <Text style={styles.heading}>{ScreenContent.heading}</Text>
-                <View style={styles.imgContainer} >
+                <Text style={{...styles.heading,color:ScreenContent.colorTheme }}>{ScreenContent.heading}</Text>
+                <View style={{...styles.imgContainer, borderColor:ScreenContent.colorTheme}} >
                     {ScreenContent.img}
                 </View>
                 <View >
@@ -17,8 +17,7 @@ export default function ServicesLayout({ScreenContent}) {
                     </Text>
                     <Image source={require('../../assets/card-bg2.png')} resizeMethod='cover' style={styles.imgBottom}  />
                 </View>
-                <Text style={styles.contatUs}>Contact us</Text>
-                <ContactCard/>
+                <ContactCard colorTheme={{textColor:ScreenContent.colorTheme}} />
                 <Footer />
             </View>
     )
@@ -34,7 +33,6 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         marginTop: 15,
-        color:'navy'
     },
     imgContainer: {
         width: 390,
@@ -43,7 +41,6 @@ const styles = StyleSheet.create({
         borderWidth: 3,
         borderRadius: 3,
         marginTop: 15,
-        borderColor: 'darkblue'
     },
     decs: {
         alignSelf: 'center',
@@ -63,9 +60,5 @@ const styles = StyleSheet.create({
         height:50,
         width:50,
         alignSelf:'flex-end'
-    },
-    contatUs:{
-        color:'navy',
-        fontWeight:'bold'
     },
 })

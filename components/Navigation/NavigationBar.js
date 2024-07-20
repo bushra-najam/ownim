@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
  import { NavigationContainer } from '@react-navigation/native';
- import Contact from '../Screens/Contact';
+ import ContactUsScreen from '../Screens/Contact';
  import AboutScreen from '../Screens/About';
  import { MaterialCommunityIcons,AntDesign,MaterialIcons } from '@expo/vector-icons';
- import DrawerItems from './constants/DrawerItems';
+ import DrawerItems from '../constants/NavItems';
  import ServicesScreen from '../Screens/Services';
  import HomeScreen from '../Screens/Home';
 import LeatherScreen from '../Screens/Leather';
@@ -18,12 +17,14 @@ import OffsetPrintingScreen from '../Screens/OffsetPrinting';
 import LogisticsScreen from '../Screens/Logistics';
 import Softwares from '../Screens/Softwares';
 import StainlessSteelScreen from '../Screens/StainlessSteel';
+import Footer from '../utils/Footer';
+import WhatsappButton from '../utils/WhatsappButton';
+import { View } from 'react-native';
 
 const TopTabs = createMaterialTopTabNavigator();
 const Stack = createNativeStackNavigator();
 export default function NavigationBar() {
   
-
  return (
   <>
 <NavigationContainer >
@@ -36,7 +37,7 @@ export default function NavigationBar() {
          tabBarItemStyle:{marginTop:5},
          tabBarAndroidRipple:true,
          swipeEnabled:false,
-         animationEnabled:false
+         animationEnabled:false,
        }}
        tabBar={(props)=> <CusTomTab {...props}  />}
 >
@@ -56,20 +57,20 @@ export default function NavigationBar() {
             drawer.iconType==='Material' ?
 <MaterialCommunityIcons
                  name={drawer.iconName}
-                 size={24}
+                 size={28}
                  color={focused ? "#e91e63" : "black"}
              />
            :
            drawer.iconType==='MaterialIcons' ?
 <MaterialIcons
                name={drawer.iconName}
-               size={24}
+               size={28}
                color={focused ? "#e91e63" : "black"}
              />
            :
 <AntDesign
                name={drawer.iconName}
-               size={24}
+               size={28}
                color={focused ? "#e91e63" : "black"}
              />
            }}
@@ -78,7 +79,7 @@ export default function NavigationBar() {
              drawer.name==='Home' ? HomeScreen
                : drawer.name==='Services' ? ServicesScreen
                  : drawer.name==='About us' ? AboutScreen
-                   : Contact
+                   : ContactUsScreen
            }
 />)  
        }
@@ -90,10 +91,14 @@ export default function NavigationBar() {
       <Stack.Screen  key={"Logistics" }name="Logistics" options={{tabBarIcon:()=>{},headerShown:false}} component={LogisticsScreen} />
       <Stack.Screen  key={"Software" }name="Software" options={{tabBarIcon:()=>{},headerShown:false}} component={Softwares} />
       <Stack.Screen  key={"StainlessSteel" }name="StainlessSteel" options={{tabBarIcon:()=>{},headerShown:false}} component={StainlessSteelScreen} />
-
+      <Stack.Screen  key={"Footer" } name="Footer" options={{tabBarIcon:()=>{},headerShown:false}} component={Footer} />
+        
 </TopTabs.Navigator>
 
 </NavigationContainer>
+<View  style={{width:50, paddingBottom:20, alignSelf:'flex-end', marginTop:-60}}>
+<WhatsappButton/>
+</View>
 </>
 
  );

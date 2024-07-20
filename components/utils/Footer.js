@@ -1,9 +1,11 @@
 import React from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
 import { MaterialIcons, AntDesign } from '@expo/vector-icons';
-
+import { FooterContent } from "./ScreensContent";
+import { useNavigation } from '@react-navigation/native';
 
 export default function Footer (){
+    const navigation = useNavigation()
     return(
         <View style={styles.footer}>
             <View style={styles.img}>
@@ -11,18 +13,18 @@ export default function Footer (){
             </View>
             <View style={styles.contactInfo}>
             <MaterialIcons name="email" size={24} color="white" />
-            <Text style={styles.text}>info@Ownim.com{"\n"}</Text>
+            <Text style={styles.text}>{FooterContent.email}</Text>
             </View>
             <View style={styles.contactInfo}>
             <MaterialIcons name="phone" size={24} color={'white'} />
-            <Text style={styles.text}>0332545784{"\n"}</Text>
+            <Text style={styles.text}>{FooterContent.number}</Text>
             </View>
             <View style={styles.contactInfo}>
             <MaterialIcons name="contacts" size={24} color={'white'} />
-            <Text style={styles.text}>site Karachi{"\n"}</Text>
+            <Text style={styles.text}>{FooterContent.site}</Text>
             </View>
             <View>
-                <Text style={styles.heading}>Follow Us</Text>
+                <Text style={styles.heading}>{FooterContent.followUsTxt}</Text>
                 <View style={styles.followUs}>
                     <AntDesign name= "facebook-square"  size={24} color={'white'}  ></AntDesign>
                     <AntDesign name= "instagram"  size={24} color={'white'}  ></AntDesign>
@@ -30,20 +32,20 @@ export default function Footer (){
                     <AntDesign name="linkedin-square"  size={24} color={'white'} />
                 </View>
             </View>
-            <View ><Text style={styles.heading}>Quick Links</Text>
-                <Text style={styles.detailedText}>Home</Text>
-                <Text style={styles.detailedText}>Services</Text>
-                <Text style={styles.detailedText}>Contact us</Text>
+            <View ><Text style={styles.heading}>{FooterContent.quickLinksTxt}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Home")} >{FooterContent.homeLink} </Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("About us")} >{FooterContent.aboutLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Contact us")} >{FooterContent.contactLink}</Text>
             </View>
-            <View style={styles.services}><Text style={styles.heading}>Services</Text>
-                <Text style={styles.detailedText}>Janitorial and Consumable Products</Text>
-                <Text style={styles.detailedText}>Premium Leather Products</Text>
-                <Text style={styles.detailedText}>Stainless Stell Products</Text>
-                <Text style={styles.detailedText}>Gravuture Printing</Text>
-                <Text style={styles.detailedText}>Flexo printing</Text>
-                <Text style={styles.detailedText}>Offset Printing</Text>
-                <Text style={styles.detailedText}>Logistic Services</Text>
-                <Text style={styles.detailedText}>Software house & & Digital Marketing Solutions</Text>
+            <View style={styles.services}><Text style={styles.heading}>{FooterContent.servicesTxt}</Text>
+            <Text style={styles.detailedText} onPress={()=>navigation.navigate("Jenitorials")} >{FooterContent.janitorialsLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Leather")} >{FooterContent.leatherLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("StainlessSteel")} >{FooterContent.stainlessteelLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Gravure")} >{FooterContent.gravureLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Flexo")} >{FooterContent.flexoLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Offset")}  >{FooterContent.offsetLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Logistics")}  >{FooterContent.logisticsLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Software")}  >{FooterContent.sofwareLink}</Text>
             </View>
         </View>
     )
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
       flex:1,
       backgroundColor:'black',
       width:"100%",
-      height:750,
+      height:765,
     },
     text:{
         color:'white'
@@ -76,7 +78,6 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         columnGap:30,
         marginHorizontal:40,
-        marginBottom:10
     },
     detailedText:{
         color: "white",
@@ -90,6 +91,6 @@ const styles = StyleSheet.create({
         alignItems:'center'
     },
     services:{
-        marginBottom:20
+        marginBottom:40
     }
    })

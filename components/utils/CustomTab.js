@@ -170,37 +170,39 @@ const TabBar = ({
         accessibilityState={isFocused ? { selected: true } : {}}
         accessibilityLabel={options.tabBarAccessibilityLabel}
         style={styles.button}
-        onPress={() => onPressServices()}
       >
-        <View
-          onLayout={(event) => onLayout(event, index)}
-          style={styles.buttonContainer}
-        >
-          <MaterialIcons
-            name={'miscellaneous-services'}
-            size={30}
-            color={isServicesFocused ? "#e91e63" : "black"}
-            style={{ marginBottom: -6 }}
-          />
-          <Animated.Text style={[styles.text, { opacity: ServiceOPacity }]} >
-            {label}
-            <Menu name="servidec-menu" key={'nav-menu'} >
-              <MenuTrigger key={'nav-menu-trigger'} >
-                <MaterialCommunityIcons name="menu-down" size={24} color={(isServicesFocused) ? "#e91e63" : "black"} style={{ marginBottom: -15, marginTop: -15 }} />
-              </MenuTrigger>
-              <MenuOptions key={'nav-menu-options'}>
-                <MenuOption key={3} onSelect={() => onServiceSelect('Jenitorials')} text='Jenitorials' />
-                <MenuOption key={2} onSelect={() => onServiceSelect('Leather')} text="Leather Products" />
-                <MenuOption key={4} onSelect={() => onServiceSelect('StainlessSteel')} text="StainlessSteel Products" />
-                <MenuOption key={1} onSelect={() => onServiceSelect('Flexo')} text='Flexo Printing' />
-                <MenuOption key={5} onSelect={() => onServiceSelect('Gravure')} text='Gravure Priniting' />
-                <MenuOption key={6} onSelect={() => onServiceSelect('Offset')} text="Offset Printing" />
-                <MenuOption key={7} onSelect={() => onServiceSelect('Logistics')} text='Logistic Services' />
-                <MenuOption key={8} onSelect={() => onServiceSelect('Software')} text='Software & Digital Marketing Solutions' />
-              </MenuOptions>
-            </Menu>
-          </Animated.Text>
-        </View>
+        <Menu name="servidec-menu" key={'nav-menu'} >
+          <MenuTrigger key={'nav-menu-trigger'} onPress={() => onPressServices()}
+            customStyles={{ triggerWrapper: { height: 33 } }}
+          >
+            <View
+              onLayout={(event) => onLayout(event, index)}
+              style={styles.buttonContainer}
+            >
+              <MaterialIcons
+                name={'miscellaneous-services'}
+                size={30}
+                color={isServicesFocused ? "#e91e63" : "black"}
+              />
+              <View style={{ flexDirection: 'row' }}>
+                <Animated.Text style={[styles.text, { opacity: ServiceOPacity }]} >
+                  {label}
+                </Animated.Text>
+                <MaterialCommunityIcons name="menu-down" size={20} color={(isServicesFocused) ? "#e91e63" : "black"} />
+              </View>
+            </View>
+          </MenuTrigger>
+          <MenuOptions key={'nav-menu-options'}>
+            <MenuOption key={3} onSelect={() => onServiceSelect('Jenitorials')} text='Jenitorials' />
+            <MenuOption key={2} onSelect={() => onServiceSelect('Leather')} text="Leather Products" />
+            <MenuOption key={4} onSelect={() => onServiceSelect('StainlessSteel')} text="StainlessSteel Products" />
+            <MenuOption key={1} onSelect={() => onServiceSelect('Flexo')} text='Flexo Printing' />
+            <MenuOption key={5} onSelect={() => onServiceSelect('Gravure')} text='Gravure Priniting' />
+            <MenuOption key={6} onSelect={() => onServiceSelect('Offset')} text="Offset Printing" />
+            <MenuOption key={7} onSelect={() => onServiceSelect('Logistics')} text='Logistic Services' />
+            <MenuOption key={8} onSelect={() => onServiceSelect('Software')} text='Software & Digital Marketing Solutions' />
+          </MenuOptions>
+        </Menu>
       </TouchableOpacity>
     ) : (
       <TouchableOpacity
@@ -273,7 +275,6 @@ const styles = StyleSheet.create({
     left: 0,
     position: "absolute",
     right: 0,
-    // this must be 1 for the scaleX animation to work properly
     width: 1,
   },
   text: {

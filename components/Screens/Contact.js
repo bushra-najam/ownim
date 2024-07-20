@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, ScrollView, ImageBackground } from "react-native";
-import { Ionicons, Entypo, MaterialIcons, Foundation } from '@expo/vector-icons';
 import Footer from '../utils/Footer';
-import { ContactUs } from '../utils/ServiceScreensContent';
+import { ContactUsContent } from '../utils/ScreensContent';
 import ContactCard from '../utils/ContactCard';
 
 export default function ContactUsScreen() {
@@ -10,21 +9,19 @@ export default function ContactUsScreen() {
       <SafeAreaView>
          <ScrollView>
             <View style={styles.container}>
-               <ImageBackground source={require('../../assets/background.png')} style={styles.bcgImg} resizeMode='cpver' >
+               <ImageBackground source={require('../../assets/background.png')} style={styles.bcgImg} resizeMode='cover' >
                   <View style={styles.header}>
-                     <Text style={styles.headerText1}>CONTACT{" "}</Text>
-                     <Text style={styles.headerText2}>US</Text>
+                     <Text style={styles.headerText1}>{ContactUsContent.heading1}</Text>
+                     <Text style={styles.headerText2}>{ContactUsContent.heading2}</Text>
                   </View>
                   <View style={styles.line} />
                   <Text style={styles.txt}>
-                     {ContactUs.contactUsTxt}
+                     {ContactUsContent.contactUsTxt}
                   </Text>
-            <View  style={{alignItems:'center'}}>
-            <ContactCard/>
-            </View>
-             
-
-               </ImageBackground>
+                  <View style={{ alignItems: 'center', padding:10 }}>
+                     <ContactCard colorTheme={{ textColor: 'navy' }} />
+                  </View>
+                  </ImageBackground>
             </View>
             <Footer />
          </ScrollView>
@@ -36,7 +33,7 @@ const styles = StyleSheet.create({
    container: {
       flex: 1,
       width: '100%',
-      alignItems: 'center'
+      alignItems: 'center',
    },
    header: {
       marginTop: 15,
@@ -57,16 +54,16 @@ const styles = StyleSheet.create({
    bcgImg: {
       alignSelf: 'center',
       width: '100%',
-      height: 680
+      paddingBottom:20
    },
    line: {
       borderBottomColor: 'darkblue',
       borderBottomWidth: StyleSheet.hairlineWidth,
    },
-   txt:{
-      marginLeft:20,
-      marginRight:10,
-      fontSize:13,
-      marginTop:18,
+   txt: {
+      marginLeft: 20,
+      marginRight: 10,
+      fontSize: 13,
+      marginTop: 18,
    }
 })

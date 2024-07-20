@@ -3,21 +3,21 @@ import * as React from 'react';
 import { Button } from "react-native-elements";
 
 
-export default function Card({ name, image, desc, url, borderColor , navigation }) {
+export default function Card({ name, image, desc, url, borderColor, navigation }) {
   return (
-    <View style={{...styles.card, borderColor}}>
+    <View style={{ ...styles.card, borderColor }}>
       <Image source={image} accessibilityLabel={`${name} ownim`} style={styles.image} resizeMode="cover" />
 
-        <View style={styles.nameContainer}>
-          <Text style={styles.name}>{name} </Text>
-        </View>
-      
-        <View style={styles.desc}>
-          <Text>{desc} </Text>
-        </View>
-        <View style={styles.button}>
-          <Button title={"Read More"} onPress={() => navigation.navigate(url)} />
-        </View>
+      <View style={styles.nameContainer}>
+        <Text style={styles.name}>{name} </Text>
+      </View>
+
+      <View style={styles.desc}>
+        <Text>{desc} </Text>
+      </View>
+      <View style={styles.button}>
+        <Button title={"Read More"} onPress={() => navigation.navigate(url)} />
+      </View>
     </View>
   )
 
@@ -25,13 +25,13 @@ export default function Card({ name, image, desc, url, borderColor , navigation 
 
 const styles = StyleSheet.create({
   card: {
-    alignItems:'flex-start',
+    alignItems: 'flex-start',
     backgroundColor: "white",
     borderRadius: 16,
     borderWidth: 3,
     padding: 16,
     margin: 16,
-    paddingTop:0,
+    paddingTop: 0,
 
     ...Platform.select({
       ios: {
@@ -48,12 +48,12 @@ const styles = StyleSheet.create({
   nameContainer: {
     flexDirection: 'row',
     marginBottom: 15,
-    width:'100%'
+    width: '100%'
   },
   name: {
     fontSize: 30,
     fontWeight: 'bold',
-    alignSelf:'flex-start'
+    alignSelf: 'flex-start'
   },
   desc: {
     fontSize: 22,
@@ -68,22 +68,22 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
     borderWidth: 3,
-    borderTopEndRadius:16
+    borderTopEndRadius: 16
   },
   button: {
     width: 160,
     marginBottom: 2,
-    flexDirection:'row'
+    flexDirection: 'row'
   },
   bcgImg: {
     alignSelf: 'flex-start',
-    height:50,
-    width:50
+    height: 50,
+    width: 50
   },
   bcgImg2: {
     alignSelf: 'flex-end',
-    height:50,
-    width:50,
-    paddingRight:0
+    height: 50,
+    width: 50,
+    paddingRight: 0
   },
 })

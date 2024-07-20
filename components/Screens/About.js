@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, Image, SafeAreaView, ScrollView, ImageBackground } from "react-native";
-import { AboutUs } from '../utils/ServiceScreensContent'
+import { AboutUs } from '../utils/ScreensContent'
 import Footer from '../utils/Footer';
 export default function AboutScreen() {
    return (
@@ -39,7 +39,7 @@ export default function AboutScreen() {
                </Text>
                
                <View style={styles.textContainer}>
-               <Text style={styles.text}>
+               <Text style={styles.text}   >
                   {AboutUs.ourMissionText}
                </Text>
                </View>
@@ -47,7 +47,7 @@ export default function AboutScreen() {
             </View>
              
             <Image source={require('../../assets/aboutus.png')} style={styles.img} resizeMethod='stetch' />
-            <Footer />
+            <Footer  />
          </ScrollView>
       </SafeAreaView>
    );
