@@ -183,7 +183,6 @@ export const  HomeScreenContent ={
   offset: `Offset Printing`,
   logistics: `Logistic Services`,
   software: `Software development`,
-
 }
 
 export const ContactCardContent = {

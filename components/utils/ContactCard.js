@@ -58,13 +58,12 @@ const styles = StyleSheet.create({
       paddingLeft:10,
     },
     contacs: {
-       height: 90,
        width: 'auto',
        flexDirection: 'row',
        alignItems: 'center',
        alignSelf: 'flex-start',
-       marginTop: 2,
        textAlign: 'center',
+       paddingVertical:15
     },
     iconName: {
        fontSize: 13,
