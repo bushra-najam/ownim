@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {SafeAreaView,ScrollView, StyleSheet } from "react-native";
-import {LeatherScreenContent} from '../utils/ScreensContent'
+import {LeatherScreenContent} from '../constants/ScreensContent'
 import ServicesLayout from '../utils/ServicesLayout';
 
 export default function LeatherScreen() {

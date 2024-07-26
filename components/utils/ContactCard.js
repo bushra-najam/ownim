@@ -1,7 +1,7 @@
 import React from 'react'
 import { Ionicons, Entypo, MaterialIcons, Foundation } from '@expo/vector-icons';
 import { View, Text, StyleSheet } from "react-native";
-import { ContactCardContent } from './ScreensContent';
+import { ContactCardContent } from '../constants/ScreensContent';
 
 function ContactCard({colorTheme}) {
   return (

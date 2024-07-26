@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {SafeAreaView,ScrollView, Button } from "react-native";
-import {OffsetScreenontent} from '../utils/ScreensContent'
+import {OffsetScreenontent} from '../constants/ScreensContent'
 import ServicesLayout from '../utils/ServicesLayout';
 
 export default function OffsetScreen() {

@@ -6,7 +6,7 @@ import Cards from '../utils/Cards';
 import { ProductCards, ServicesCards } from '../constants/CardsData'
 import Footer from '../utils/Footer';
 import ContactCard from '../utils/ContactCard';
-import { HomeScreenContent} from '../utils/ScreensContent'
+import { HomeScreenContent} from '../constants/ScreensContent'
 
 function HomeScreen({ navigation }) {
 

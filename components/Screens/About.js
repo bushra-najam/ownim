@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, Image, SafeAreaView, ScrollView, ImageBackground } from "react-native";
-import { AboutUs } from '../utils/ScreensContent'
+import { AboutUs } from '../constants/ScreensContent'
 import Footer from '../utils/Footer';
 export default function AboutScreen() {
    return (

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, SafeAreaView, ScrollView } from "react-native";
-import { GravurelScreenontent } from '../utils/ScreensContent'
+import { GravurelScreenontent } from '../constants/ScreensContent'
 import ServicesLayout from '../utils/ServicesLayout';
 
 export default function GravureScreen() {

@@ -1,6 +1,6 @@
 import React from 'react'
 import {  SafeAreaView, ScrollView } from 'react-native'
-import { FlexoScreenontent } from '../utils/ScreensContent'
+import { FlexoScreenontent } from '../constants/ScreensContent'
 import ServicesLayout from '../utils/ServicesLayout'
 
 export default function FlexoScreen({navigation}) {

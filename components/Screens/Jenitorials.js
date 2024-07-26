@@ -1,6 +1,6 @@
 import React from 'react'
 import { SafeAreaView, ScrollView } from 'react-native'
-import { jentorialsScreenContent } from '../utils/ScreensContent'
+import { jentorialsScreenContent } from '../constants/ScreensContent'
 import ServicesLayout from '../utils/ServicesLayout'
 
 

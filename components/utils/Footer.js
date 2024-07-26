@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
 import { MaterialIcons, AntDesign } from '@expo/vector-icons';
-import { FooterContent } from "./ScreensContent";
+import { FooterContent } from "../constants/ScreensContent";
 import { useNavigation } from '@react-navigation/native';
 
 export default function Footer (){

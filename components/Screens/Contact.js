@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, ScrollView, ImageBackground } from "react-native";
 import Footer from '../utils/Footer';
-import { ContactUsContent } from '../utils/ScreensContent';
+import { ContactUsContent } from '../constants/ScreensContent';
 import ContactCard from '../utils/ContactCard';
 
 export default function ContactUsScreen() {
