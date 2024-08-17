@@ -4,7 +4,10 @@ import Footer from '../utils/Footer';
 import { ContactUsContent } from '../constants/ScreensContent';
 import ContactCard from '../utils/ContactCard';
 
-export default function ContactUsScreen() {
+export default function ContactUsScreen({navigation,route}) {
+ const stack = [];
+ stack.push(route.name);
+ console.log("contact, stack: ", stack)
    return (
       <SafeAreaView>
          <ScrollView>
@@ -23,7 +26,7 @@ export default function ContactUsScreen() {
                   </View>
                   </ImageBackground>
             </View>
-            <Footer />
+            <Footer navigation={navigation} name={route.name}  stack={stack} />
          </ScrollView>
       </SafeAreaView>
    );

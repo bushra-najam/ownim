@@ -10,7 +10,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import LeatherScreen from '../Screens/Leather';
 import FlexoScreen from '../Screens/Flexo';
 import CusTomTab from '../utils/CustomTab';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import JenitorialsScreen from '../Screens/Jenitorials';
 import GravurePrintingScreen from '../Screens/GravurePrinting';
 import OffsetPrintingScreen from '../Screens/OffsetPrinting';
@@ -22,7 +22,7 @@ import WhatsappButton from '../utils/WhatsappButton';
 import { View } from 'react-native';
 
 const TopTabs = createMaterialTopTabNavigator();
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 export default function NavigationBar() {
   
  return (
@@ -38,6 +38,7 @@ export default function NavigationBar() {
          tabBarAndroidRipple:true,
          swipeEnabled:false,
          animationEnabled:false,
+         tabBarScrollEnabled:false
        }}
        tabBar={(props)=> <CusTomTab {...props}  />}
 >
@@ -51,6 +52,7 @@ export default function NavigationBar() {
            options={{
             animationEnabled:false,
             tabBarShowIcon:true,
+            tabBarScrollEnabled:false,
             tabBarContentContainerStyle:{borderTopColor:"white"},
             tabBarIconStyle:{position:"right"},
             tabBarIcon:({focused})=>
@@ -91,11 +93,10 @@ export default function NavigationBar() {
       <Stack.Screen  key={"Logistics" }name="Logistics" options={{tabBarIcon:()=>{},headerShown:false}} component={LogisticsScreen} />
       <Stack.Screen  key={"Software" }name="Software" options={{tabBarIcon:()=>{},headerShown:false}} component={Softwares} />
       <Stack.Screen  key={"StainlessSteel" }name="StainlessSteel" options={{tabBarIcon:()=>{},headerShown:false}} component={StainlessSteelScreen} />
-      <Stack.Screen  key={"Footer" } name="Footer" options={{tabBarIcon:()=>{},headerShown:false}} component={Footer} />
         
 </TopTabs.Navigator>
-
 </NavigationContainer>
+
 <View  style={{width:50, paddingBottom:20, alignSelf:'flex-end', marginTop:-60}}>
 <WhatsappButton/>
 </View>

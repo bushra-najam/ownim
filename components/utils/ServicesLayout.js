@@ -2,9 +2,15 @@ import React from 'react'
 import { View, StyleSheet,Text, Image } from 'react-native'
 import ContactCard from './ContactCard'
 import Footer from './Footer'
+import AntDesign from '@expo/vector-icons/AntDesign';
 
-export default function ServicesLayout({ScreenContent}) {
+export default function ServicesLayout({ScreenContent,navigation, stack}) {
+    console.log(" serviceLayout, stack:", stack)
     return (
+            <View  style={{backgroundColor:'white'}}>
+            <View>
+            <AntDesign name="doubleleft" size={24} color={ScreenContent.colorTheme} style={{alignSelf:'flex-start'}} onPress={ (stack?.length>1)? ()=>{ stack.pop() ;  return navigation.navigate(stack.pop(),  {stack: (stack.length>1)?stack:["Home"]} )} : ()=>navigation.navigate("Home") } />                
+            </View>
             <View style={styles.container}>
                 <Text style={{...styles.heading,color:ScreenContent.colorTheme }}>{ScreenContent.heading}</Text>
                 <View style={{...styles.imgContainer, borderColor:ScreenContent.colorTheme}} >
@@ -18,7 +24,10 @@ export default function ServicesLayout({ScreenContent}) {
                     <Image source={require('../../assets/card-bg2.png')} resizeMethod='cover' style={styles.imgBottom}  />
                 </View>
                 <ContactCard colorTheme={{textColor:ScreenContent.colorTheme}} />
-                <Footer />
+                <View style={{paddingBottom:32}}></View>
+                { console.log(" 2 serviceLayout, stack:", stack)}
+                <Footer navigation={navigation}  stack={stack.length>0?stack:["Home"]} />
+            </View>
             </View>
     )
 }

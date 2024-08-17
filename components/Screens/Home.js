@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Pressable, Text, SafeAreaView, View, ScrollView, StyleSheet, Image } from 'react-native';
+import { Pressable, Text, SafeAreaView, View, ScrollView, StyleSheet, Image,ImageBackground } from 'react-native';
 import { SliderBox } from "react-native-image-slider-box";
 import Cards from '../utils/Cards';
 import { ProductCards, ServicesCards } from '../constants/CardsData'
@@ -8,7 +8,7 @@ import Footer from '../utils/Footer';
 import ContactCard from '../utils/ContactCard';
 import { HomeScreenContent} from '../constants/ScreensContent'
 
-function HomeScreen({ navigation }) {
+function HomeScreen({ navigation, route }) {
 
   const [images, setImage] = React.useState([
     require("../../assets/img1.png"),
@@ -17,6 +17,8 @@ function HomeScreen({ navigation }) {
     require("../../assets/img4.png"), // Network image
     require('../../assets/img5.png')
   ])
+  const stack =[];
+  stack.push(route.name);
 
   return (
     <SafeAreaView  >
@@ -71,11 +73,11 @@ function HomeScreen({ navigation }) {
                 </View>
               </View>
             </View>
-            <View style={{ marginVertical: 8, padding: 15 }} >
+            <View style={{padding: 25, backgroundColor:'mistyrose', marginVertical:5 }} >
               <Pressable android_ripple={{ color: 'white', borderless: false, radius: 15 }} style={styles.circle1} onPress={() => navigation.navigate("Leather")} ><Text style={styles.circleTxt}>{HomeScreenContent.leather} </Text></Pressable>
               <View style={{ flexDirection: 'row', float: 'left', justifyContent: 'space-between' }}>
                 <Pressable android_ripple={{ color: 'white', borderless: false, radius: 15 }} style={styles.circle1} onPress={() => navigation.navigate("StainlessSteel")} ><Text style={styles.circleTxt} >{HomeScreenContent.stainlessSteel}</Text></Pressable>
-                <Text style={{ alignSelf: 'center', paddingBottom: 32, fontWeight: '900', fontSize: 20, color: '#e91e63' }}>{HomeScreenContent.product}</Text>
+                <Text style={{ alignSelf: 'center', paddingBottom: 100, fontWeight: '900', fontSize: 20, color: '#e91e63' }}>{HomeScreenContent.product}</Text>
                 <Pressable android_ripple={{ color: 'white', borderless: false, radius: 15 }} style={styles.circle1} onPress={() => navigation.navigate("Jenitorials")}  ><Text style={styles.circleTxt}>{HomeScreenContent.jenitorials}</Text></Pressable>
               </View>
             </View>
@@ -89,41 +91,42 @@ function HomeScreen({ navigation }) {
             </Text>
           </View>
           <Image source={require('../../assets/homeScreen/bg2.png')} style={{ alignSelf: 'flex-start', width: 400, height: 300 }} resizeMode='stretch' />
-          <View style={{ paddingHorizontal: 11 }}>
-            <View style={{ marginVertical: 2, }} >
-              <View style={{ flexDirection: 'row', justifyContent: 'space-around', paddingHorizontal: 45 }}>
-                <View style={{ paddingTop: 20, paddingHorizontal: 15 }} >
+          <View style={{ marginTop:5, padding: 11, backgroundColor:'aliceblue' }}>
+            <View style={{rowGap:45 }} >
+              <View style={{ flexDirection: 'row', justifyContent: 'space-around', paddingHorizontal: 45, columnGap:40}}>
+                <View style={{  }} >
                   <Pressable android_ripple={{ color: 'white', borderless: false, radius: 15 }} style={styles.circle2} onPress={() => navigation.navigate("Gravure")}  ><Text style={styles.circleTxt}>{HomeScreenContent.gravure}</Text></Pressable>
                 </View>
-                <View style={{ paddingTop: 20, paddingHorizontal: 15 }}>
+                <View style={{ }}>
                   <Pressable android_ripple={{ color: 'white', borderless: false, radius: 15 }} style={styles.circle2} onPress={() => navigation.navigate("Flexo")} ><Text style={styles.circleTxt}>{HomeScreenContent.flexo}</Text></Pressable>
                 </View>
               </View>
-              <View style={{ flexDirection: 'row', justifyContent: 'space-around', paddingTop: 18 }}>
+              <View style={{ flexDirection: 'row', justifyContent: 'space-around', columnGap:45}}>
                 <View><Pressable android_ripple={{ color: 'white', borderless: false, radius: 15 }} style={styles.circle2} onPress={() => navigation.navigate("Logistics")} ><Text style={styles.circleTxt} >{HomeScreenContent.logistics}</Text></Pressable></View>
-                <Text style={{ alignSelf: 'center', fontWeight: 'bold', fontSize: 18, color: 'midnightblue' }}>{HomeScreenContent.services}</Text>
+                <Text style={{ alignSelf: 'center', fontWeight: 'bold', fontSize: 18, color: 'midnightblue', paddingBottom:32 }}>{HomeScreenContent.services}</Text>
                 <View ><Pressable android_ripple={{ color: 'white', borderless: false, radius: 15 }} style={styles.circle2} onPress={() => navigation.navigate("Offset")}  ><Text style={styles.circleTxt}>{HomeScreenContent.offset}</Text></Pressable>
                 </View>
               </View>
-              <View style={{ paddingBottom: 15 }}><Pressable android_ripple={{ color: 'white', borderless: false, radius: 15 }} style={styles.circle2} onPress={() => navigation.navigate("Software")} ><Text style={styles.circleTxt}>{HomeScreenContent.software}</Text></Pressable></View>
+              <View style={{ paddingBottom: 15, marginTop:-29 }}><Pressable android_ripple={{ color: 'white', borderless: false, radius: 15 }} style={styles.circle2} onPress={() => navigation.navigate("Software")} ><Text style={styles.circleTxt}>{HomeScreenContent.software}</Text></Pressable></View>
             </View>
           </View>
           <View>
             {ServicesCards.map((item, indx) => <Cards key={indx} name={item.name} image={item.image} desc={item.desc} url={item.url} navigation={navigation} borderColor={"navy"} />)}
           </View>
-          <View style={{ padding: 20, backgroundColor: 'aliceblue' }}>
+          <ImageBackground source={require('../../assets/homeScreen/image.png')} resizeMode='cover' style={{height:380, width:'100%'}}  >
+          <View style={{  }}>
             <View style={{ flexDirection: 'row' }} >
-              <Text style={{ fontSize: 16, fontWeight: 800, color: 'navy' }}>{HomeScreenContent.thirdSubHeading}</Text>
-              <Image source={require('../../assets/homeScreen/medal.png')} resizeMode={'cover'} style={{ height: 20, width: 20, marginHorizontal: 10 }} />
+              <Text style={{ fontSize: 16, fontWeight: 800, color: 'navy', paddingHorizontal:7, paddingTop:10 }}>{HomeScreenContent.thirdSubHeading}</Text>
             </View>
-            <Text>{HomeScreenContent.thirdParagraph}</Text>
+            <Text style={{alignSelf:'center', fontWeight:'700', paddingHorizontal:8}}>{HomeScreenContent.thirdParagraph}</Text>
           </View>
+          </ImageBackground>
           <Image source={require('../../assets/homeScreen/teamwork.png')} />
           <View style={{ backgroundColor: '#f5f5f5', alignItems: 'center', paddingVertical: 10 }}>
             <ContactCard colorTheme={{ textColor: 'navy' }} />
           </View>
         </View>
-        <Footer  />
+        <Footer  navigation={navigation} stack={[]}  />
       </ScrollView>
     </SafeAreaView>
   );
@@ -171,7 +174,7 @@ const styles = StyleSheet.create({
   },
   thirdSection: {
     height: 450,
-    backgroundColor: 'lightpink',
+    backgroundColor: 'mistyrose',
     width: '100%',
     alignItems: 'center',
     alignSelf: 'center',
@@ -200,7 +203,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: "#e91e63"
+    backgroundColor: "#e91e63",
   },
   circle2: {
     width: 100,

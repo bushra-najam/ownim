@@ -18,7 +18,7 @@ import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
 const screenWidth = Dimensions.get("window").width;
 
-const DISTANCE_BETWEEN_TABS = 35;
+const DISTANCE_BETWEEN_TABS = screenWidth/12;
 
 const TabBar = ({
   state,
@@ -83,24 +83,10 @@ const TabBar = ({
   }
 
   // scrolls to the active tab label when a new tab is focused
-  useEffect(() => {
-    if (
-      state.routes.length > 1 &&
-      widths.length === state.routes.length &&
-      !widths.includes(undefined)
-    ) {
-      if (state.index === 0) {
-        scrollViewRef.current.scrollTo({
-          x: 0,
-        });
-      } else {
-        // keep the focused label at the center of the screen
-        scrollViewRef.current.scrollTo({
-          x: (outputRangeRef.current[state.index]) - screenWidth / 2,
-        });
-      }
-    }
-  }, [state.index, state.routes.length, widths]);
+  useEffect (
+    ()=>{}
+
+);
 
   // get the label widths on mount
   const onLayout = (event, index) => {
@@ -133,7 +119,7 @@ const TabBar = ({
     };
 
     const onServiceSelect = (serviceName) => {
-      navigation.navigate({ name: serviceName, merge: true });
+      navigation.navigate(serviceName,{ name: serviceName, merge: true,stack:["Home"] });
       setServiceFocus(true)
     }
 
@@ -230,15 +216,16 @@ const TabBar = ({
 
   return (
     <View style={styles.contentContainer}>
-      <Animated.ScrollView
+      <Animated.View
         horizontal
         ref={scrollViewRef}
         showsHorizontalScrollIndicator={false}
         style={styles.container}
+        scrollEnabled={false}
       >
         {labels}
         <Animated.View style={[styles.indicator, { transform }]} />
-      </Animated.ScrollView>
+      </Animated.View>
     </View>
   );
 };
@@ -261,7 +248,7 @@ const styles = StyleSheet.create({
     shadowColor: 'black',
     shadowOpacity: 0.1,
     shadowRadius: StyleSheet.hairlineWidth,
-    height: 38
+    height: 38,
   },
   contentContainer: {
     height: 60,

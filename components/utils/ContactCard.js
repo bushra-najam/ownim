@@ -9,13 +9,13 @@ function ContactCard({colorTheme}) {
       <Text style={{...styles.heading,color:colorTheme.textColor}}>{ContactCardContent.heading}</Text>
 
                      <View style={styles.contacs}>
-                     <Entypo name="home" size={24} color={colorTheme.textColor} style={styles.icon} />
+                     <Entypo name="home" size={16} color={colorTheme.textColor} style={styles.icon} />
                         <View style={styles.dsc}>
                            <Text style={{...styles.iconName, color:colorTheme.textColor}}>{ContactCardContent.addressLabel}</Text>
                            <Text  style={styles.details}>{ContactCardContent.addressValue} </Text>
                         </View>
                         <View style={{ marginLeft: 18 }}>
-                        <Ionicons name="call" size={24} color={colorTheme.textColor} style={styles.icon} />
+                        <Ionicons name="call" size={16} color={colorTheme.textColor} style={styles.icon} />
       
                         </View>
                         <View style={styles.dsc}>
@@ -25,13 +25,13 @@ function ContactCard({colorTheme}) {
                      </View>
 
                      <View style={styles.contacs}>
-                     <MaterialIcons name="email" size={24} color={colorTheme.textColor} />
+                     <MaterialIcons name="email" size={16} color={colorTheme.textColor} style={styles.icon}  />
                      <View style={styles.dsc}>
                         <Text style={{...styles.iconName, color:colorTheme.textColor}}>{ContactCardContent.mailLabel}</Text>
                         <Text  style={styles.details} >{ContactCardContent.mailValue}</Text>
                      </View>
                      <View style={{ marginLeft: 18 }}>
-                        <Foundation name="web" size={24} color={colorTheme.textColor} />
+                        <Foundation name="web" size={16} color={colorTheme.textColor} style={styles.icon} />
                      </View>
                      <View style={styles.dsc}>
                         <Text style={{...styles.iconName, color:colorTheme.textColor}}>{ContactCardContent.webAddressLabel}</Text>
@@ -50,12 +50,13 @@ const styles = StyleSheet.create({
        flex: 1,
        width: '100%',
        alignItems: 'flex-start',
+       
     },
     heading:{
       fontWeight: '900', 
       fontSize: 15, 
       alignSelf:'flex-start',
-      paddingLeft:10,
+      marginLeft:'24%',
     },
     contacs: {
        width: 'auto',
@@ -78,8 +79,10 @@ const styles = StyleSheet.create({
         fontSize:10
     },
     icon: {
-       alignSelf: 'center',
-       marginLeft: 2
+       alignSelf: 'flex-starts',
+       marginLeft: 2, 
+       paddingBottom:15
+
     },
     txt:{
        marginLeft:20,

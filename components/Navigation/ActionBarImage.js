@@ -1,7 +1,8 @@
 import React from 'react';
 
-import {View, Image} from 'react-native';
+import {View, Image, Dimensions} from 'react-native';
 
+const screenWidth = Dimensions.get("window").width;
 const ActionBarImage = () => {
   return (
     <View style={{flexDirection: 'row'}}>
@@ -11,7 +12,7 @@ const ActionBarImage = () => {
         style={{
           width: 100,
           height: 29,
-          marginLeft: 300,
+          marginLeft: screenWidth-100,
           marginTop:10,
         }}
       />

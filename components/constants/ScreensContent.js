@@ -169,7 +169,7 @@ export const  HomeScreenContent ={
   mainHeading:` Welcome to Ownim Corporation!` ,
   firstSubHeading:'What are our products?',
   firstParagraph : `Ownim  Corporation  excels  in  manufacturing  high-quality  janitorial  and consumable products, premium leather items, and stainless steel racks. We are dedicated to providing durable, efficient solutions tailored to meet the diverse needs of our clients in various industries.`,
-  secondSubHeading:'What are out Services?',
+  secondSubHeading:'What are our Services?',
   secondParagraph : `At Ownim Corporation, we provide comprehensive printing solutions including gravure, flexo, and offset printing, delivering unmatched quality and precision. Additionally, as a versatile software house and logistics service provider, we ensure seamless digital and physical connectivity tailored to our clients' diverse needs.`,
   thirdSubHeading:'PROJECTS & ACHIEVMENTS',
   thirdParagraph : `At Ownim Corporation, our projects range from innovative print solutions in gravure, flexo, and offset printing to advanced software development and strategic logistic services, setting new standards in each field. We have successfully led the market with our state-of- the-art janitorial products, premium leather goods, and robust stainless steel racks, continually exceeding client expectations. Our achievements include significant partnerships with industry leaders, awards for product design and sustainability, and a consistent record of improving operational efficiencies for our clients. These milestones underscore our commitment to innovation and quality, reaffirming our position as a leader in diverse industries.`,
@@ -200,7 +200,7 @@ export const ContactCardContent = {
 export const FooterContent={
   email:`info@Ownim.com\n`,
   number:`0332545784\n`,
-  site:`site Karachi\n`,
+  site:`Site Karachi\n`,
   followUsTxt: `Follow Us`,
   quickLinksTxt:`Quick Links`,
   homeLink:`Home`,

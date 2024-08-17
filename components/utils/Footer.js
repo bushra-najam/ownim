@@ -2,10 +2,9 @@ import React from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
 import { MaterialIcons, AntDesign } from '@expo/vector-icons';
 import { FooterContent } from "../constants/ScreensContent";
-import { useNavigation } from '@react-navigation/native';
 
-export default function Footer (){
-    const navigation = useNavigation()
+export default function Footer ({navigation, stack}){
+    
     return(
         <View style={styles.footer}>
             <View style={styles.img}>
@@ -23,29 +22,30 @@ export default function Footer (){
             <MaterialIcons name="contacts" size={24} color={'white'} />
             <Text style={styles.text}>{FooterContent.site}</Text>
             </View>
-            <View>
-                <Text style={styles.heading}>{FooterContent.followUsTxt}</Text>
-                <View style={styles.followUs}>
-                    <AntDesign name= "facebook-square"  size={24} color={'white'}  ></AntDesign>
-                    <AntDesign name= "instagram"  size={24} color={'white'}  ></AntDesign>
-                    <AntDesign name="twitter"  size={24} color={'white'} />
-                    <AntDesign name="linkedin-square"  size={24} color={'white'} />
-                </View>
-            </View>
-            <View ><Text style={styles.heading}>{FooterContent.quickLinksTxt}</Text>
+            <View >
+                <Text style={styles.heading}>{FooterContent.quickLinksTxt}</Text>
                 <Text style={styles.detailedText} onPress={()=>navigation.navigate("Home")} >{FooterContent.homeLink} </Text>
                 <Text style={styles.detailedText} onPress={()=>navigation.navigate("About us")} >{FooterContent.aboutLink}</Text>
                 <Text style={styles.detailedText} onPress={()=>navigation.navigate("Contact us")} >{FooterContent.contactLink}</Text>
             </View>
-            <View style={styles.services}><Text style={styles.heading}>{FooterContent.servicesTxt}</Text>
-            <Text style={styles.detailedText} onPress={()=>navigation.navigate("Jenitorials")} >{FooterContent.janitorialsLink}</Text>
-                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Leather")} >{FooterContent.leatherLink}</Text>
-                <Text style={styles.detailedText} onPress={()=>navigation.navigate("StainlessSteel")} >{FooterContent.stainlessteelLink}</Text>
-                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Gravure")} >{FooterContent.gravureLink}</Text>
-                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Flexo")} >{FooterContent.flexoLink}</Text>
-                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Offset")}  >{FooterContent.offsetLink}</Text>
-                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Logistics")}  >{FooterContent.logisticsLink}</Text>
-                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Software")}  >{FooterContent.sofwareLink}</Text>
+            <View><Text style={styles.heading}>{FooterContent.servicesTxt}</Text>
+            <Text style={styles.detailedText} onPress={()=>navigation.navigate("Jenitorials", { stack:stack})} >{FooterContent.janitorialsLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Leather", {stack:stack})} >{FooterContent.leatherLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("StainlessSteel",{ stack:stack})} >{FooterContent.stainlessteelLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Gravure",{ stack:stack})} >{FooterContent.gravureLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Flexo",{ stack:stack})} >{FooterContent.flexoLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Offset",{ stack:stack})}  >{FooterContent.offsetLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Logistics",{ stack:stack})}  >{FooterContent.logisticsLink}</Text>
+                <Text style={styles.detailedText} onPress={()=>navigation.navigate("Software",{ stack:stack})}  >{FooterContent.sofwareLink}</Text>
+            </View>
+            <View>
+                <View style={styles.followUs}>
+                    <Text style={styles.FollowUsHeading}>{FooterContent.followUsTxt}</Text>
+                    <AntDesign name= "facebook-square"  size={24} color={'white'}  ></AntDesign>
+                    <AntDesign name= "instagram"  size={24} color={'white'}  ></AntDesign>
+                    <AntDesign name= "twitter"  size={24} color={'white'} />
+                    <AntDesign name= "linkedin-square"  size={24} color={'white'} />
+                </View>
             </View>
         </View>
     )
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
       flex:1,
       backgroundColor:'black',
       width:"100%",
-      height:765,
+      height:790,
     },
     text:{
         color:'white'
@@ -64,20 +64,24 @@ const styles = StyleSheet.create({
     heading:{
         fontWeight: 'bold',
         color:'white',
-        marginBottom:10,
-        marginTop:10,
+        marginTop:30,
+        fontSize: 20,
+        marginHorizontal:8
+    },
+    FollowUsHeading:{
+        fontWeight: 'bold',
+        color:'white',
         fontSize: 20,
         marginHorizontal:8
     },
     contactInfo:{
         flexDirection:'row',
         columnGap:10,
-        marginHorizontal:8
     },
     followUs:{
+        marginTop:30,
         flexDirection:'row',
         columnGap:30,
-        marginHorizontal:40,
     },
     detailedText:{
         color: "white",
@@ -90,7 +94,5 @@ const styles = StyleSheet.create({
         marginLeft:8,
         alignItems:'center'
     },
-    services:{
-        marginBottom:40
-    }
+
    })

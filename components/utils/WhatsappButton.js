@@ -1,18 +1,25 @@
 import React from 'react'
-import {TouchableOpacity,StyleSheet,Text, Linking, View} from 'react-native'
-import { Fontisto } from '@expo/vector-icons';
+import {StyleSheet, Linking, View, Platform, Image, Pressable} from 'react-native'
 
 function WhatsappButton() {
-    const title ="hello"
     const message ="hello, I want to contact you to place my order";
-    const masked="hello";
+    const number = (Platform.OS== "ios")? "923353856397": "+923353856397";
   return (
-    <View  style={styles.appButtonContainer} >
-    <Fontisto name="whatsapp" size={40} color="green"
-    onPress={() => Linking.openURL(`whatsapp://send?text=${message}&phone=+923353856397${masked}`)}
-    style={{justifyContent:'flex-end'}}
+    <View  style={styles.appButtonContainer} 
+    >
+    <Pressable
+        onPress={() => Linking.openURL(`whatsapp://send?text=${message}&phone=${number}`)
+        .then(()=>"whatsapp opened")
+        .catch(()=>alert("make sure WhatsApp is installed on your device"))
+      }
+    >
+    <Image 
+    source={require('../../assets/whatsapp_icon.png')}
+    style={styles.imageStyles}
+    resizeMethod='center'
 
     />
+    </Pressable>
 </View>
   )
 }
@@ -21,7 +28,6 @@ function WhatsappButton() {
 export default WhatsappButton
 
 const styles = StyleSheet.create({
-    // ...
     appButtonContainer: {
       alignItems:'flex-end'
       
@@ -32,5 +38,6 @@ const styles = StyleSheet.create({
       fontWeight: "bold",
       alignSelf: "center",
       textTransform: "uppercase",
-    }
+    },
+    imageStyles:{justifyContent:'flex-end', height:50,width:50}
   });

@@ -1,7 +1,5 @@
-import { Platform, StyleSheet, View, Text, Image, ImageBackground } from "react-native";
+import { Platform, StyleSheet, View, Text, Image,Linking } from "react-native";
 import * as React from 'react';
-import { Button } from "react-native-elements";
-
 
 export default function Card({ name, image, desc, url, borderColor, navigation }) {
   return (
@@ -16,7 +14,8 @@ export default function Card({ name, image, desc, url, borderColor, navigation }
         <Text>{desc} </Text>
       </View>
       <View style={styles.button}>
-        <Button title={"Read More"} onPress={() => navigation.navigate(url)} />
+        <Text  onPress={() => navigation.navigate(url)} style={{color:borderColor, fontWeight:'bold', textDecorationLine: 'underline', textDecorationColor:borderColor  }} >Read More</Text>
+
       </View>
     </View>
   )

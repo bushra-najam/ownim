@@ -2,7 +2,9 @@ import * as React from 'react';
 import { View, Text, StyleSheet, Image, SafeAreaView, ScrollView, ImageBackground } from "react-native";
 import { AboutUs } from '../constants/ScreensContent'
 import Footer from '../utils/Footer';
-export default function AboutScreen() {
+export default function AboutScreen({navigation, route}) {
+   const stack =[];
+   stack.push(route.name);
    return (
       <SafeAreaView>
          <ScrollView>
@@ -31,7 +33,6 @@ export default function AboutScreen() {
                   <Text style={styles.text}>
                      {AboutUs.ourVissionText}
                   </Text>
-                  
                </View >
                
                <Text style={styles.heading} >
@@ -47,7 +48,7 @@ export default function AboutScreen() {
             </View>
              
             <Image source={require('../../assets/aboutus.png')} style={styles.img} resizeMethod='stetch' />
-            <Footer  />
+            <Footer navigation={navigation}  stack={stack}/>
          </ScrollView>
       </SafeAreaView>
    );
